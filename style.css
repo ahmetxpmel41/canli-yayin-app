@@ -1,0 +1,59 @@
+/* 1. SCROLLBAR GİZLEME (Chat kutusu için) */
+/* Chrome, Safari ve Opera için */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* IE, Edge ve Firefox için */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE ve Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* 2. ŞANTİYE ŞERİDİ DESENİ (Reklam alanları için) */
+/* Bu kod, reklam kutularının zeminine çapraz çizgiler ekler */
+.bg-stripes {
+    background-color: #1f2937; /* Koyu gri zemin (Tailwind Gray-800) */
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        #374151 10px, /* Daha açık gri çizgi (Tailwind Gray-700) */
+        #374151 20px
+    );
+}
+
+/* 3. CANLI YAYIN KIRMIZI NOKTA ANİMASYONU */
+/* Nefes alıp veren kırmızı ışık efekti */
+.live-indicator {
+    background-color: #dc2626; /* Kırmızı renk */
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); /* Işık yayılma efekti */
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+}
+
+/* 4. GENEL AYARLAR */
+/* Iframe'lerin altında bazen oluşan boşluğu engeller */
+iframe {
+    display: block;
+}
+
+/* Seçilen metinlerin rengini sarı yapar (Tema uyumu) */
+::selection {
+    background-color: #ca8a04; /* Sarı */
+    color: black;
+}
