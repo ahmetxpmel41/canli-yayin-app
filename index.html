@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ŞantiyeCanlı - 7/24 İnşaat Yayını</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
@@ -59,23 +59,22 @@
             </div>
         </main>
 
-        <aside class="w-full lg:w-80 bg-gray-900 border-l border-gray-800 flex flex-col shrink-0 h-[35vh] lg:h-auto z-10 shadow-2xl">
+        <aside class="w-full lg:w-80 bg-gray-900 border-l border-gray-800 flex flex-col shrink-0 h-[35vh] lg:h-auto z-10 shadow-2xl relative">
             
             <div class="p-3 border-b border-gray-800 flex justify-between items-center bg-gray-900">
                 <span class="text-sm font-bold text-gray-400">SOHBET</span>
                 <span class="text-xs text-gray-600 bg-gray-800 px-2 py-1 rounded">👥 <span id="view-count">1.2K</span></span>
             </div>
 
-            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-900/50 scrollbar-hide">
-                </div>
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-900/50 scrollbar-hide chat-list-padding">
+            </div>
 
-            <div class="px-4 pb-2">
-                 <div class="w-full h-12 bg-stripes border border-gray-700 border-dashed rounded flex items-center justify-center text-[10px] text-gray-500">
+            <div class="px-4 pb-2 hidden lg:block"> <div class="w-full h-12 bg-stripes border border-gray-700 border-dashed rounded flex items-center justify-center text-[10px] text-gray-500">
                     SPONSOR ALANI
                 </div>
             </div>
 
-            <div class="p-3 bg-gray-800 border-t border-gray-700">
+            <div class="chat-input-fixed">
                 <form id="chat-form" class="relative">
                     <input type="text" id="message-input" placeholder="Bir şeyler yaz..." autocomplete="off"
                         class="w-full bg-gray-900 text-gray-200 text-sm rounded-md pl-3 pr-10 py-3 outline-none focus:ring-1 focus:ring-yellow-600 border border-gray-700 placeholder-gray-600 transition-all">

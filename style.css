@@ -11,22 +11,20 @@
 }
 
 /* 2. ŞANTİYE ŞERİDİ DESENİ (Reklam alanları için) */
-/* Bu kod, reklam kutularının zeminine çapraz çizgiler ekler */
 .bg-stripes {
-    background-color: #1f2937; /* Koyu gri zemin (Tailwind Gray-800) */
+    background-color: #1f2937; /* Koyu gri zemin */
     background-image: repeating-linear-gradient(
         45deg,
         transparent,
         transparent 10px,
-        #374151 10px, /* Daha açık gri çizgi (Tailwind Gray-700) */
+        #374151 10px, /* Daha açık gri çizgi */
         #374151 20px
     );
 }
 
 /* 3. CANLI YAYIN KIRMIZI NOKTA ANİMASYONU */
-/* Nefes alıp veren kırmızı ışık efekti */
 .live-indicator {
-    background-color: #dc2626; /* Kırmızı renk */
+    background-color: #dc2626; 
     box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
     animation: pulse-red 2s infinite;
 }
@@ -38,7 +36,7 @@
     }
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); /* Işık yayılma efekti */
+        box-shadow: 0 0 0 6px rgba(220, 38, 38, 0);
     }
     100% {
         transform: scale(0.95);
@@ -47,13 +45,34 @@
 }
 
 /* 4. GENEL AYARLAR */
-/* Iframe'lerin altında bazen oluşan boşluğu engeller */
 iframe {
     display: block;
 }
 
-/* Seçilen metinlerin rengini sarı yapar (Tema uyumu) */
 ::selection {
     background-color: #ca8a04; /* Sarı */
     color: black;
+}
+
+/* 5. MOBİL CHAT DÜZENLEMESİ (YENİ EKLENDİ) */
+/* Bu sınıfı mesaj yazma kutusunun (input ve butonun olduğu div) class'ına ekle */
+.chat-input-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 50; /* Her şeyin üstünde dursun */
+    background-color: #111827; /* Arka plan rengi (Koyu Siyah) - Saydam olmaması şart */
+    border-top: 1px solid #374151; /* Üstüne ince bir çizgi */
+    padding: 10px;
+    
+    /* iPhone'larda alttaki siyah çizgi payı için güvenli alan */
+    padding-bottom: calc(10px + env(safe-area-inset-bottom));
+}
+
+/* Bu sınıfı mesajların listelendiği ana kapsayıcıya (scroll olan alan) ekle */
+.chat-list-padding {
+    /* Mesaj kutusu sabit olduğu için en alttaki mesajın arkada kalmasını önler */
+    padding-bottom: 100px; 
 }
